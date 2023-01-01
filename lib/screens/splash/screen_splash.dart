@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_test_ui/core/colors/colors.dart';
 import 'package:food_test_ui/core/keys/keys.dart';
 
-import '../home/screen_home.dart';
-
 class ScreenSplash extends StatelessWidget {
   const ScreenSplash({super.key});
 

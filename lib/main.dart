@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_test_ui/core/colors/colors.dart';
 import 'package:food_test_ui/core/keys/keys.dart';
 import 'package:food_test_ui/screens/home/screen_home.dart';
 import 'package:food_test_ui/screens/splash/screen_splash.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: kWhite,
+      systemNavigationBarColor: kWhite,
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -18,6 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: kRed,
+        primarySwatch: kMaterialred,
         appBarTheme: const AppBarTheme(
           backgroundColor: kWhite,
         ),
