@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_test_ui/core/colors/colors.dart';
+import 'package:food_test_ui/core/keys/keys.dart';
+import 'package:food_test_ui/screens/home/screen_home.dart';
 import 'package:food_test_ui/screens/splash/screen_splash.dart';
 
 void main() {
@@ -16,7 +18,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: kRed,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kWhite,
+        ),
       ),
+      navigatorKey: navigatorKey,
+      routes: {'/home': (context) => const ScreenHome()},
       home: const ScreenSplash(),
     );
   }
