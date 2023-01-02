@@ -1,14 +1,15 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:food_test_ui/core/colors/colors.dart';
 import 'package:food_test_ui/core/constants/constants.dart';
 import 'package:food_test_ui/core/fonts/fonts.dart';
 import 'package:food_test_ui/core/icons/icons.dart';
 
+import '../../core/images/images.dart';
 import 'widgets/banner_widget.dart';
 import 'widgets/category_widget.dart';
 import 'widgets/hero_widget.dart';
+import 'widgets/recommend_grid_widget.dart';
+import 'widgets/top_picks_widget.dart';
 
 class ScreenHome extends StatelessWidget {
   const ScreenHome({super.key});
@@ -20,7 +21,7 @@ class ScreenHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: dropDownWidget(), actions: appBarActions()),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           kheight20,
           const HomeHeroWidget(),
@@ -32,7 +33,21 @@ class ScreenHome extends StatelessWidget {
           kheight15,
           const CategoryWidget(),
           kheight40,
-          BannerWidget(),
+          const BannerWidget(),
+          kheight30,
+          homeHeadingWidget(
+            title: 'Top Picks For You',
+            icon: KIcon.heart,
+          ),
+          kheight15,
+          const TopPicksWidget(),
+          kheight30,
+          homeHeadingWidget(
+            title: 'Breakfast recommendations',
+            icon: KIcon.heart,
+          ),
+          kheight15,
+          const RecommendGridWidget(),
         ],
       ),
     );

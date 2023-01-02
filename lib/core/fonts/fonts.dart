@@ -5,14 +5,14 @@ class KFont {
   static const h1 = TextStyle(
     color: kBlack,
     fontFamily: 'Metropolis',
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w900,
     fontSize: 26,
   );
 
   static const h1White = TextStyle(
     color: kWhite,
     fontFamily: 'Metropolis',
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w900,
     fontSize: 26,
   );
 

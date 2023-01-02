@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:food_test_ui/core/fonts/fonts.dart';
 import 'package:food_test_ui/models/banner_model.dart';
 
 import '../../../core/colors/colors.dart';
@@ -33,8 +34,58 @@ class BannerWidget extends StatelessWidget {
     return Container(
       width: size.width / 1.2,
       margin: const EdgeInsets.only(left: 20, right: 10, bottom: 20),
+      padding: const EdgeInsets.only(left: 30),
       decoration: BoxDecoration(
-          color: banner.color, borderRadius: BorderRadius.circular(15)),
+        color: banner.color,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      clipBehavior: Clip.hardEdge,
+      child: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                banner.mainTitle,
+                style: KFont.h2White.copyWith(color: banner.textColor),
+              ),
+              kheight,
+              Text(
+                banner.title,
+                style: KFont.h1White.copyWith(color: banner.textColor),
+              ),
+              kheight,
+              SizedBox(
+                  width: size.width / 2.3,
+                  child: Text(
+                    banner.subtitle,
+                    style:
+                        KFont.semiBoldWhite.copyWith(color: banner.textColor),
+                  )),
+              kheight,
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: kWhite),
+                  onPressed: () {},
+                  child: Text(
+                    banner.buttonText,
+                    style: TextStyle(
+                      color: banner.buttonTextColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ))
+            ],
+          ),
+          Positioned(
+            right: -50,
+            top: 30,
+            child: Image.asset(
+              banner.image,
+              width: 220,
+            ),
+          )
+        ],
+      ),
     );
   }
 

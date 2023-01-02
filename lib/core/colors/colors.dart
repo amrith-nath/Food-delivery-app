@@ -5,6 +5,8 @@ const kBlue = Color(0xff6b9cf8);
 const kGrey = Color.fromARGB(255, 207, 207, 207);
 const kWhite = Colors.white;
 const kBlack = Colors.black;
+const kBannerColor = Color(0xff97D7EA);
+const kBannerTextColor = Color(0xff245080);
 const MaterialColor kMaterialred = MaterialColor(
   0xffE33938,
   <int, Color>{

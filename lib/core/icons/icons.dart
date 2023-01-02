@@ -8,4 +8,6 @@ class KIcon {
   static final fastFood = SvgPicture.asset(
     'assets/svgs/fast-food-outline.svg',
   );
+
+  static final heart = SvgPicture.asset('assets/svgs/heart.svg');
 }
