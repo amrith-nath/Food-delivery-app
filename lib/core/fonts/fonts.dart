@@ -26,7 +26,7 @@ class KFont {
   static const h2White = TextStyle(
     color: kWhite,
     fontFamily: 'Metropolis',
-    fontWeight: FontWeight.w800,
+    fontWeight: FontWeight.w700,
     fontSize: 20,
   );
 
@@ -70,6 +70,21 @@ class KFont {
     fontWeight: FontWeight.w400,
     fontSize: 14,
   );
+
+  static const regularGrey = TextStyle(
+    color: kGrey,
+    fontFamily: 'Metropolis',
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+  );
+
+  static final smallGrey = TextStyle(
+    color: Colors.grey.shade600,
+    fontFamily: 'Metropolis',
+    fontWeight: FontWeight.w600,
+    fontSize: 12,
+  );
+
   static const regularWhite = TextStyle(
     color: kWhite,
     fontFamily: 'Metropolis',

@@ -22,31 +22,34 @@ class HomeHeroWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      clipBehavior: Clip.hardEdge,
-      decoration: decoration,
+    return Padding(
+      padding: kPaddingH,
       child: Container(
-        decoration: BoxDecoration(
-          color: kRed,
-          borderRadius: BorderRadius.circular(15),
-          gradient: gradient,
-        ),
-        child: Stack(
-          children: [
-            Padding(
-              padding: padding,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  heroTextWidget(),
-                  kheight15,
-                  heroButton(),
-                ],
+        clipBehavior: Clip.hardEdge,
+        decoration: decoration,
+        child: Container(
+          decoration: BoxDecoration(
+            color: kRed,
+            borderRadius: BorderRadius.circular(15),
+            gradient: gradient,
+          ),
+          child: Stack(
+            children: [
+              Padding(
+                padding: padding,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    heroTextWidget(),
+                    kheight15,
+                    heroButton(),
+                  ],
+                ),
               ),
-            ),
-            heroImageWidget()
-          ],
+              heroImageWidget()
+            ],
+          ),
         ),
       ),
     );
@@ -58,7 +61,7 @@ class HomeHeroWidget extends StatelessWidget {
       children: const [
         Text(
           'Restaurants',
-          style: KFont.h1White,
+          style: KFont.h2White,
         ),
         kheight,
         Text(

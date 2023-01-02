@@ -1,10 +1,13 @@
-import 'package:flutter/foundation.dart';
+import 'package:card_swiper/card_swiper.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:food_test_ui/core/colors/colors.dart';
 import 'package:food_test_ui/core/constants/constants.dart';
 import 'package:food_test_ui/core/fonts/fonts.dart';
 import 'package:food_test_ui/core/icons/icons.dart';
 
+import 'widgets/banner_widget.dart';
+import 'widgets/category_widget.dart';
 import 'widgets/hero_widget.dart';
 
 class ScreenHome extends StatelessWidget {
@@ -12,15 +15,57 @@ class ScreenHome extends StatelessWidget {
   static const items = ['Location'];
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(title: dropDownWidget(), actions: appBarActions()),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: ListView(
-          children: const [
-            HomeHeroWidget(),
-          ],
-        ),
+      body: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          kheight20,
+          const HomeHeroWidget(),
+          kheight20,
+          homeHeadingWidget(
+            title: 'Categories',
+            icon: KIcon.fastFood,
+          ),
+          kheight15,
+          const CategoryWidget(),
+          kheight40,
+          BannerWidget(),
+        ],
+      ),
+    );
+  }
+
+  Padding homeHeadingWidget(
+      {required String title, required Widget icon, String? trailing}) {
+    return Padding(
+      padding: kPaddingH,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: KFont.h3,
+              ),
+              kWidth,
+              SizedBox(
+                height: 20,
+                width: 20,
+                child: Center(child: icon),
+              ),
+            ],
+          ),
+          Text(
+            trailing ?? '',
+            style: KFont.regular,
+          ),
+        ],
       ),
     );
   }
