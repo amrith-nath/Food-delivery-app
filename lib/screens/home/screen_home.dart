@@ -3,10 +3,12 @@ import 'package:food_test_ui/core/colors/colors.dart';
 import 'package:food_test_ui/core/constants/constants.dart';
 import 'package:food_test_ui/core/fonts/fonts.dart';
 import 'package:food_test_ui/core/icons/icons.dart';
-
-import '../../core/images/images.dart';
+import 'package:food_test_ui/screens/home/widgets/brand_widget.dart';
+import 'package:food_test_ui/screens/home/widgets/navigation_bar.dart';
 import 'widgets/banner_widget.dart';
+import 'widgets/bottom_banner.dart';
 import 'widgets/category_widget.dart';
+import 'widgets/coupen_list_widget.dart';
 import 'widgets/hero_widget.dart';
 import 'widgets/recommend_grid_widget.dart';
 import 'widgets/top_picks_widget.dart';
@@ -16,8 +18,6 @@ class ScreenHome extends StatelessWidget {
   static const items = ['Location'];
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: AppBar(title: dropDownWidget(), actions: appBarActions()),
       body: ListView(
@@ -48,8 +48,25 @@ class ScreenHome extends StatelessWidget {
           ),
           kheight15,
           const RecommendGridWidget(),
+          kheight30,
+          homeHeadingWidget(
+              title: 'Popular Brands',
+              icon: KIcon.fastFood,
+              trailing: 'View All'),
+          kheight15,
+          const BrandGridWidget(),
+          kheight30,
+          homeHeadingWidget(
+              title: 'Coupens For You',
+              icon: KIcon.heart,
+              trailing: 'View All'),
+          kheight15,
+          const CoupenListWidget(),
+          kheight30,
+          const BottomBanner(),
         ],
       ),
+      bottomNavigationBar: const NavigationWidget(),
     );
   }
 

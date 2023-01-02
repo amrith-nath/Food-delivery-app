@@ -10,4 +10,9 @@ class KIcon {
   );
 
   static final heart = SvgPicture.asset('assets/svgs/heart.svg');
+
+  static final home = SvgPicture.asset('assets/svgs/home.svg');
+  static final search = SvgPicture.asset('assets/svgs/search.svg');
+  static final bag = SvgPicture.asset('assets/svgs/bag.svg');
+  static final profile = SvgPicture.asset('assets/svgs/user.svg');
 }

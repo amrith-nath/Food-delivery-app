@@ -7,7 +7,6 @@ import 'package:food_test_ui/screens/splash/screen_splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: kWhite,

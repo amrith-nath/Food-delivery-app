@@ -7,6 +7,8 @@ const kWhite = Colors.white;
 const kBlack = Colors.black;
 const kBannerColor = Color(0xff97D7EA);
 const kBannerTextColor = Color(0xff245080);
+const kCoupenColor1 = Color(0xff91c0ed);
+const kCoupenColor2 = Color(0xffcfc448);
 const MaterialColor kMaterialred = MaterialColor(
   0xffE33938,
   <int, Color>{

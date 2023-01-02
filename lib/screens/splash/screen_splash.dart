@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_test_ui/core/colors/colors.dart';
+import 'package:food_test_ui/core/constants/constants.dart';
+import 'package:food_test_ui/core/fonts/fonts.dart';
 import 'package:food_test_ui/core/keys/keys.dart';
 
 class ScreenSplash extends StatelessWidget {
@@ -11,10 +13,20 @@ class ScreenSplash extends StatelessWidget {
       startNavigation(context);
     });
 
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: CircularProgressIndicator(
-          color: kRed,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'YUMMY',
+              style: KFont.h3.copyWith(color: kRed, fontSize: 25),
+            ),
+            kheight30,
+            const CircularProgressIndicator(
+              color: kRed,
+            ),
+          ],
         ),
       ),
     );
